@@ -51,3 +51,24 @@ violation[{
 	"yes" in input.passwordauthentication
 }
 ```
+
+## Metadata
+
+Plugins expect policies to contain a metadata section as comments, with a `# METADATA` line to indicate it. This metadata should be in a YAML format, and contain a title and description of the policy. Other configuration can be set also, like the schedule that a policy should run on, or the control that it is linked to.
+
+Any other comments can be added as normal (before and after) with a line separator between them and the metadata.
+
+Here is an example metadata:
+```opa
+# your custom comment
+
+# METADATA
+# title: <your-title>
+# description: <your-description>
+# custom:
+#   controls:
+#     - <control-id>
+#   schedule: "<cron-string>"
+
+# your custom comment
+```
