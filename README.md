@@ -16,6 +16,15 @@ You can easily build the policies by running
 make build
 ```
 
+## Releasing
+
+In a repo created from this template (the release workflows skip the template repo itself):
+
+- Releases come from release-please PRs. Merging one publishes the bundle built from `policies/`.
+- Release candidates (`vX.Y.Z-rcN`) come from the `cut-prerelease` workflow.
+- If the repo already has releases, set `.release-please-manifest.json` to its current version
+  (for example `{".": "1.2.3"}`) before the first release-please run.
+
 ## Running policies locally
 
 ```shell
