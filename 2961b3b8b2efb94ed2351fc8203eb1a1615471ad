@@ -1,0 +1,2 @@
+lisa-design:
+W3-S2-T02 template variant (decided by the user 2026-10-13): every job in release-please.yml, release.yml and cut-prerelease.yml has `if: ${{ !github.event.repository.is_template }}` so it is skipped in policy-template itself and runs in repos created from it. preview.yml and ci.yml are unguarded. Manifest seeded at 0.0.0 with NO bootstrap-sha (a template SHA would not exist in a generated repo). Callers otherwise byte-identical to the reviewed plugin-file-attestation-policies#4.
