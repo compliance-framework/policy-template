@@ -13,5 +13,5 @@ import rego.v1
 # Your policy code here
 # e.g.
 allow if {
-    input.example
+	input.example
 }
