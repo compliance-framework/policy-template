@@ -1,0 +1,5 @@
+lisa-design:
+- ci.yml is a byte-for-byte copy of mock-plugin-policies-1's caller (workflows v1.5.1 pin, jobs ci/release-checks/notify). It deliberately passes no opa-version/directory inputs: ci-policies.yml defaults (OPA 1.14.1, Regal 0.43.0, policies/) are what new repos should start with.
+- No repo .regal/config.yaml: CI then uses the shared config from compliance-framework/workflows; a repo config would replace it in every repo copied from this template.
+- Regal errors only (user decision 2026-10-13): fixed pointless-import + circular-import by dropping the test's self-import and calling allow directly (tests share the policy package per the shared config). The detached-metadata warning on example.rego is left as is.
+- release.yml / build-and-upload.yml untouched (W3 replaces them); they pass actionlint v1.7.12.
